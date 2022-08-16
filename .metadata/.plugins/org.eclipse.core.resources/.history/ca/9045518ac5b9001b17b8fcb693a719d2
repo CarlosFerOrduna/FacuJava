@@ -1,0 +1,47 @@
+package Array;
+import java.util.Random;
+
+
+public class ArrayMochila {
+
+	public static void main(String[] args) {
+
+		Random rand = new Random();
+		int ataque;
+		int[] sinMochila = new int[3];
+		int[] mochilaChica = new int[5];
+		int[] mochilaGrande = new int[7];
+		int[] pistola = new int[7];
+			int puños = 5, paloEsoba = 10, cuchilloCocina = 15;
+		int[] armas = new int[11];
+		String  llaveComun, llaveMaestra;
+		int balas;
+		int cantinplora = 0;
+		
+		sinMochila[0] = cantinplora;
+		
+		armas [0] = puños;
+		armas [0] = cuchilloCocina;
+		armas [0] = paloEsoba;
+		
+		
+		ataque = rand.nextInt(puños); 
+		 if(ataque < 2) {
+			 System.out.println("Erraste el golpe, \n valor de ataque: " + ataque );
+		 }else if(ataque>2 &&ataque<5) {
+			 System.out.println("golpe efectivo \n valor del golpe: " + ataque);
+		 }
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+	}
+
+}

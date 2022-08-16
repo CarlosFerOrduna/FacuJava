@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;red&apos; in &apos;derivada.CajeroBanelco.extraer(...)&apos; to &apos;cliente&apos;&#x0D;&#x0A;- Original project: &apos;Parcial&apos;&#x0D;&#x0A;- Original element: &apos;derivada.CajeroBanelco.extraer(double, Cliente).red&apos;&#x0D;&#x0A;- Renamed element: &apos;red&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;red&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;derivada{CajeroBanelco.java[CajeroBanelco~extraer~D~QCliente;@red!279!289!287!289!QCliente;!0!true" name="cliente" references="true" stamp="1634252426553" version="1.0"/>
+</session>

@@ -1,0 +1,37 @@
+package Array;
+
+
+
+public class ArrayMochila {
+
+	public static void main(String[] args) {
+
+		double[] sinMochila = new double[3];
+		int[] mochilaChica = new int[5];
+		int[] mochilaGrande = new int[7];
+		int[] pistola = new int[7];
+		int[] armas = new int[4];
+		String  llaveComun, llaveMaestra;
+		int balas;
+		double cantinplora;
+		
+		sinMochila[0] = cantinplora;
+		
+		
+		armas [0] =  pistola;
+		
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+	}
+
+}

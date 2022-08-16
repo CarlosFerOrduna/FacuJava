@@ -1,0 +1,9 @@
+package domain;
+
+public class Colaborador {
+
+	private String nombre;
+	private String apellido;
+	private String email;
+	
+}

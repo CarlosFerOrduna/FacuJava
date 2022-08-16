@@ -1,0 +1,9 @@
+package domain;
+
+public class Cliente extends Persona{
+
+	private double credito;
+	
+	public Cliente() {
+	}
+}

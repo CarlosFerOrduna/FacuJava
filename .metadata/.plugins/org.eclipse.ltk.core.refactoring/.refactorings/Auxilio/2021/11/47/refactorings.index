@@ -1,0 +1,87 @@
+1637034502443	Move compilation units
+1637034570875	Move compilation units
+1637034577893	Delete element
+1637035674803	Move compilation unit
+1637035738284	Move compilation units
+1637035795693	Rename package 'derivada'
+1637037594429	Delete elements
+1637038214993	Rename type 'Usuario'
+1637039195004	Rename type 'Especialidad'
+1637039263893	Rename package 'AcaHayUsuarios'
+1637039277995	Rename package 'AcaHayVehiculos'
+1637039285425	Rename package 'Problemas'
+1637039293015	Rename package 'Costos'
+1637039306421	Rename package 'costos'
+1637039319026	Rename package 'problemas'
+1637039346875	Rename package 'derivadaDeVehiculo'
+1637039356929	Rename package 'derivadaDeUsuario'
+1637039857388	Rename type 'CostoComplejo'
+1637039865242	Move compilation unit
+1637039870747	Delete element
+1637040234465	Rename field 'targuet'
+1637040438967	Delete element
+1637040634932	Move compilation unit
+1637040659979	Rename type 'ServiceEspecialidad'
+1637040673561	Move compilation unit
+1637040690760	Rename type 'HistorialDeReparaciones'
+1637041017517	Rename type 'ReparacionesRepository'
+1637076574509	Delete element
+1637078040516	Rename type 'RpuestoRepository'
+1637122100973	Delete element
+1637127441446	Delete element
+1637129458371	Delete element
+1637159577737	Rename field 'costo'
+1637159593018	Rename local variable 'costo'
+1637159998802	Move compilation unit
+1637160833561	Rename field 'precioPorLitro'
+1637160842841	Rename local variable 'precioPorLitro'
+1637161234212	Rename field 'nivel'
+1637161242398	Rename local variable 'nivel'
+1637162279051	Rename type 'Gamma'
+1637163005520	Move compilation unit
+1637165739128	Copy package
+1637165746596	Delete element
+1637165762329	Rename package 'derivadaProblemaComplejo.copy'
+1637166121508	Delete element
+1637166158643	Rename type 'LimpiezaChazis'
+1637294205531	Rename local variable 'costo'
+1637294416053	Delete element
+1637294423969	Move compilation unit
+1637294641345	Rename type 'CambioAmortiguadores'
+1637294651327	Rename type 'CambioDeLuces'
+1637294665609	Rename type 'CambioTrenDelantero'
+1637294714811	Rename type 'LavadoChazis'
+1637294725282	Rename type 'LavadoMotor'
+1637294745444	Rename type 'RectificarDiscosDeFreno'
+1637296107803	Rename field 'gamma'
+1637296117692	Rename field 'gamma'
+1637297422648	Copy package
+1637297429822	Delete element
+1637297475089	Delete element
+1637298403373	Rename package 'derivadaGamma'
+1637298501936	Rename field 'problemaReparado'
+1637299077356	Rename field 'problemaParaResolver'
+1637299190862	Rename type 'Bateria'
+1637299231466	Move compilation unit
+1637299290550	Delete elements
+1637299446851	Rename field 'puntaje'
+1637299457936	Rename local variable 'puntaje'
+1637299797339	Delete element
+1637299802606	Delete element
+1637300316604	Delete element
+1637301943380	Rename local variable 'orientacionReparacion'
+1637302196406	Rename local variable 'espefcialidades'
+1637331517574	Move compilation unit
+1637331705309	Delete element
+1637331863033	Delete element
+1637332040142	Delete element
+1637332560496	Delete element
+1637332682361	Delete element
+1637333001916	Move compilation unit
+1637333840955	Delete element
+1637333929705	Delete element
+1637334196420	Move compilation unit
+1637336376723	Delete element
+1637336385300	Move compilation unit
+1637336575934	Delete element
+1637336939197	Move compilation unit

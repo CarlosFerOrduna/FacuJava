@@ -1,0 +1,102 @@
+@startuml final
+
+package domain{
+
+    class Cliente{
+        - Membresia membresia
+        - List<Vehiculo> vehiculos
+        - Boolean tieneMora
+    }
+
+    abstract class Membresia{
+		- List<TipoServicio>(2) servicios 
+    }
+
+    class Platinum extends Membresia{
+       
+    }
+
+    class Classic extends Membresia{
+        
+    }
+
+    class Economic extends Membresia{
+        
+    }
+
+    class Vehiculo{
+        - Ubicacion ubicacion
+        - Double toneladas
+        - Problema problema
+    }
+
+    class Ubicacion{
+        - Double longitud
+        - Double latitud
+    }
+
+
+    abstract class CamionAuxilio{
+        - List<Problema> pedidos
+        - Ubicacion ubicacion
+    }
+
+    class MiniTallerMovil extends CamionAuxilio{
+
+    }
+
+    class MiniGrua extends CamionAuxilio{
+
+    }
+
+    class GranGrua extends CamionAuxilio{
+        -Boolean : tallerAsociado
+    }
+
+    class Problema{
+        - String descripcion
+        - Boolean requiereRemolque
+        - TipoServicio tipoServicio
+    }
+
+	Enum TipoServicio{
+	REMOLQUE
+	REPARACION_SIMPLE
+	REPARACION_COMPLEJA
+	}
+
+    interface ModuloPagos{
+		tieneMora()
+    }
+
+
+}
+
+Problema        *--   Vehiculo       : tiene      <
+Ubicacion       *--   Vehiculo       : tiene      <
+Ubicacion       *--   CamionAuxilio  : tiene      <
+Membresia       *--   Cliente        : tiene      <
+Vehiculo        *--   Cliente        : tiene      <
+ModuloPagos     <|..  Cliente        : implementa <
+TipoServicio    *--   Problema       : tiene      <
+TipoServicio    *--   Membresia      : tiene      <
+
+
+
+package service{
+    class CamionAuxilioService{
+
+    }
+}
+
+package test{
+
+	class AuxilioMecanicoTest{
+	
+	+ static void main(String[] args)
+	}
+}
+
+
+
+@enduml

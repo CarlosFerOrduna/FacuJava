@@ -1,0 +1,9 @@
+package LoginMVC;
+
+import java.sql.Connection;
+
+public class Conexion {
+
+	Connection conexion;
+	
+}

@@ -1,0 +1,23 @@
+package com.holajdbc;
+
+import java.sql.SQLException;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		
+		FacturaRepository fr = new FacturaRepository();
+		Factura f = new Factura(1, "tablet", 200);
+
+		try {
+			fr.inserta(f);
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}

@@ -1,0 +1,193 @@
+
+package Final;
+
+import javax.swing.JOptionPane;
+import java.util.Random;
+
+public class peleaYo {
+
+	public static void main(String[] args) {
+
+		String enemigos[] = { "una anciana", "Bob Esponja", "Cristian Castro", "Ricky Fort", "Pikachu" };
+		String armasEnemigos[] = { "una katana", "un bazuka", "una cámara de fotos", "un palo de amasar",
+				"una toalla" };
+		String enemigo, armaEnemigo;
+		int accionPelea;
+		int accionBonus;
+		int dañoEnemigo, dañoJugador, rondas = 0;
+		int dañoMaximoEnemigo = 0;
+		int vidaEnemigo = 0;
+		int vida = 100;
+		int dañoMaximoArma;
+		int pelea;
+		String bonus[] = { "Vida", "Daño" };
+		String bonu = "";
+		String eleccion[] = { "Pelear", "Huir" };
+		String armas[] = { "Palo de escoba", "Cuchillo de cocina", "Puños" };
+		String arma = "";
+		Random random = new Random();
+
+		enemigo = enemigos[random.nextInt(enemigos.length)];
+		armaEnemigo = armasEnemigos[random.nextInt(armasEnemigos.length)];
+
+		// armas
+		if (arma == armas[0]) {
+			dañoMaximoArma = random.nextInt(15) + 1;
+		} // cuchillo
+		else if (arma == armas[1]) {
+			dañoMaximoArma = random.nextInt(30) + 1;
+		} // puños
+		else {
+			dañoMaximoArma = random.nextInt(5) + 1;
+		}
+		// enemigo
+		// anciana
+		if (enemigo == enemigos[0]) {
+			vidaEnemigo = random.nextInt(100) + 100;
+		} // bob
+		else if (enemigo == enemigos[1]) {
+			vidaEnemigo = random.nextInt(100) + 75;
+		} // castro
+		else if (enemigo == enemigos[2]) {
+			vidaEnemigo = random.nextInt(100) + 50;
+		} // fort
+		else if (enemigo == enemigos[3]) {
+			vidaEnemigo = random.nextInt(100) + 25;
+		} // pikachu
+		else {
+			vidaEnemigo = random.nextInt(100) + 35;
+		}
+
+		// armaEnemigo
+		// katana
+		if (armaEnemigo == armasEnemigos[0]) {
+			dañoMaximoEnemigo = random.nextInt(30);
+			// bazuka
+		} else if (armaEnemigo == armasEnemigos[1]) {
+			dañoMaximoEnemigo = random.nextInt(60);
+			// camara
+		} else if (armaEnemigo == armasEnemigos[2]) {
+			dañoMaximoEnemigo = random.nextInt(5);
+			// palo
+		} else if (armaEnemigo == armasEnemigos[3]) {
+			dañoMaximoEnemigo = random.nextInt(15);
+			// toalla
+		} else {
+			dañoMaximoEnemigo = random.nextInt(80);
+		}
+
+//contactoEnemigo		
+		int contacto = JOptionPane.showOptionDialog(null, "Un enemigo acaba de aparecer", "eleccion",
+				JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, eleccion, eleccion[1]);
+
+		if (contacto == 0) {
+			// pelea
+			// elige tu arma
+
+			JOptionPane.showMessageDialog(null, "\t> Tu enemigo es " + enemigo + " con " + armaEnemigo
+					+ "\n\t> Daño máximo de: " + dañoMaximoEnemigo + "\n\t> Vida: " + vidaEnemigo);
+
+			pelea = JOptionPane.showOptionDialog(null, "Elige tu arma", "armas", JOptionPane.DEFAULT_OPTION,
+					JOptionPane.INFORMATION_MESSAGE, null, armas, armas[1]);
+
+			// reparar*****************************************no me dice el arma , en su
+			// lugar me dice la posicion del
+			// array********************************************************************
+			JOptionPane.showMessageDialog(null, "\t> Por suerte vienes preparado a la pelea, tienes: " + pelea
+					+ "\n\t> Daño máximo: " + dañoMaximoArma + "\n\t> Vida: " + vida);
+
+			String accionJugador[] = { "Atacar", "Revisar la mochila" };
+			String accion = "";
+			// atacar
+			accion = accionJugador[0];
+
+			if (accion == accionJugador[0]) {
+
+				dañoJugador = random.nextInt(dañoMaximoArma);
+				dañoEnemigo = random.nextInt(dañoMaximoEnemigo);
+
+				vida = vida - dañoEnemigo;
+				vidaEnemigo = vidaEnemigo - dañoJugador;
+				rondas++;
+
+				JOptionPane.showMessageDialog(null,
+						"Ronda: " + rondas + "\n" + "\n El ataque de " + enemigo + " con " + armaEnemigo + " es de: "
+								+ dañoEnemigo + "\n Tu ataque con " + arma + " es de: " + dañoJugador + "\n"
+								+ "\n La vida restante de: " + enemigo + " es de: " + vidaEnemigo
+								+ "\n Tu vida restante es de: " + vida);
+
+				accionPelea = JOptionPane.showOptionDialog(null, "¿Qué deseas hacer?", "Acción",
+						JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, accionJugador,
+						accionJugador[0]);
+
+				while (accion == accionJugador[0] || accion == accionJugador[1]) {
+
+					if (accion == accionJugador[0]) {
+						// ataque
+						while (vida > 0 && vidaEnemigo > 0) {
+							dañoJugador = random.nextInt(dañoMaximoArma);
+							dañoEnemigo = random.nextInt(dañoMaximoEnemigo);
+
+							vida = vida - dañoEnemigo;
+							vidaEnemigo = vidaEnemigo - dañoJugador;
+							rondas++;
+
+							JOptionPane.showMessageDialog(null,
+									"Ronda: " + rondas + "\n" + "\n El ataque de " + enemigo + " con " + armaEnemigo
+											+ " es de: " + dañoEnemigo + "\n Tu ataque con " + arma + " es de: "
+											+ dañoJugador + "\n" + "\n La vida restante de: " + enemigo + " es de: "
+											+ vidaEnemigo + "\n Tu vida restante es de: " + vida);
+
+							accionPelea = JOptionPane.showOptionDialog(null, "¿Qué deseas hacer?", "Acción",
+									JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, accionJugador,
+									accionJugador[0]);
+						}
+					} else if (accion == accionJugador[1]) {
+
+						accionBonus = JOptionPane.showOptionDialog(null, "¿Qué bonus desea tomar?", "bonu",
+								JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, bonus, bonus[0]);
+
+						while (vida > 0 && vidaEnemigo > 0) {
+
+							dañoEnemigo = random.nextInt(dañoMaximoEnemigo);
+							dañoJugador = 0;
+
+							vida = vida - dañoEnemigo;
+							vidaEnemigo = vidaEnemigo - dañoJugador;
+							rondas++;
+						}
+						accionPelea = JOptionPane.showOptionDialog(null, "¿Qué bonus desea tomar?", "bonu",
+								JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, bonus, bonus[0]);
+					}
+				}
+
+				if (vida > 0 && vidaEnemigo <= 0) {
+					JOptionPane.showMessageDialog(null,
+							"# Felicitaciones, has matado a " + enemigo + " en " + rondas + " rondas. #");
+				} else if (vida <= 0 && vidaEnemigo > 0) {
+					JOptionPane.showMessageDialog(null, "# Has muerto en " + rondas + " rondas. Game Over. #");
+				} else if (vida <= 0 && vidaEnemigo <= 0) {
+					JOptionPane.showMessageDialog(null, "# Has matado a " + enemigo + " en " + rondas + " rondas "
+							+ "pero también has muerto. Game Over. #");
+				} else if (accionPelea == 1) {
+					accionPelea = JOptionPane.showOptionDialog(null, "¿Qué deseas hacer?", "Acción",
+							JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, accionJugador,
+							accionJugador[0]);
+				}
+
+	//		}
+
+		}
+		} else {
+			// huir
+			int suerte = random.nextInt(9) + 1;
+
+			if (suerte > 5) {
+				JOptionPane.showMessageDialog(null, "Has podido escapar con suerte.");
+			} else {
+				JOptionPane.showMessageDialog(null, "Tu enemigo te atrapo al intentar escapar. \n\t> Estas muerto");
+			}
+
+	}
+}
+}

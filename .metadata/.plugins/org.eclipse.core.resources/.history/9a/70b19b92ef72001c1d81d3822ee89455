@@ -1,0 +1,10 @@
+package domain;
+
+public class Refugio {
+
+	private String direccion;
+	private String nombre;
+	private Colaborador colaoradores;
+	
+	
+}

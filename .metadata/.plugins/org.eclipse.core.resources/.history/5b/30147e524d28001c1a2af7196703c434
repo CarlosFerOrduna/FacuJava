@@ -1,0 +1,15 @@
+package base;
+
+public abstract class Grua {
+
+	private String proveedor;
+	
+	
+	public abstract int pedirGrua();
+	
+	public abstract String cancelarGrua();
+	
+	public abstract double estadoGrua();
+	
+	
+}

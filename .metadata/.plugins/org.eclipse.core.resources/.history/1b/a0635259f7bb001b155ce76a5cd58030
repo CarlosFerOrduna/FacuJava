@@ -1,0 +1,43 @@
+package whileDoWhile;
+
+import javax.swing.JOptionPane;
+
+public class EjerciciosWhile1 {
+
+	public static void main(String[] args) {
+
+//		1) Se tiene la nota de un grupo de estudiantes. Se pide determinar cuántos aprobaron
+//	(nota> 4), de estos cuantos deben presentar tp (nota >= 7) y cuantos rinden escrito (nota
+//	<7) y cuantos desaprobaron Para finalizar se ingresar una nota negativa
+
+		int alumnos, nota, presentarTP = 0, escrito = 0, desaprobado = 0, aprovado = 0;
+
+		alumnos = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de alumnos"));
+		for (int i = 0; i < alumnos; i++) {
+
+			nota = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la nota"));
+
+			while (alumnos > nota) {
+
+				if (nota > 4) {
+				//	aprovado++;
+				} else if (nota >= 7) {
+					presentarTP++;
+				} else if (nota < 7) {
+					escrito++;
+				} else {
+					desaprobado++;
+				}
+				nota = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la nota"));
+
+				
+
+			}
+		}
+		System.out.println("La cantidad de aprobados son: " + (presentarTP + escrito));
+		System.out.println("La cantidad que presentan TP son: " + presentarTP);
+		System.out.println("La cantidad que rinde escritos es: " + escrito);
+		System.out.println("La cantidad de desaprobados es: " + desaprobado);
+	}
+
+}

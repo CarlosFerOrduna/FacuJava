@@ -1,0 +1,6 @@
+1638401936966	Rename method 'getMedioDePago'
+1638401957241	Rename method 'getMetodoDeFacturacion'
+1638402007546	Rename field 'metodoDeFacturacion'
+1638402119517	Rename method 'getMetodoDeFactura'
+1638411719345	Rename local variable 'valorAbsoluto'
+1638477172344	Rename local variable 'CuentaPagar'

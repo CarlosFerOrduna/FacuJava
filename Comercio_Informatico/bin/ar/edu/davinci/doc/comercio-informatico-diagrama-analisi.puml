@@ -1,0 +1,99 @@
+@startuml
+
+
+class Comercio{
+
+	- ArrayList<Producto> [] productos
+	- ArrayList<Factura> [] facturas
+	
+	+ Producto crearInsumo()
+	+ Producto crearServicioArmado()
+	+ Producto crearServicioReparacion()
+	+ String buscarProductoPorNombre()
+	+ void modificarPrecioLista(String nombre, Double precio)
+	+ void crearFactura()
+
+}
+
+abstract class Producto{
+	- String nombre
+	- Double precioLista
+	
+	~ Double precioVenta()
+	~ String getNombre()
+	~ void setNombre(String nombre)
+	~ Double getPrecioLista()
+	~ void setPrecioLista(Double precioLista)
+	~ ItemFactura clonar(Producto producto)
+}
+
+abstract class Servicio{
+	
+	- Double cantidadHoras
+	
+	~ Double getCantidadHoras()
+	~ void setCantidadHoras(Double cantidadHoras)
+}
+
+class ServicioArmado{
+
+	~ Double precioVenta()
+}
+
+class ServicioReparacion{
+
+	- Dificultad dificultad
+	~ Double precioVenta()	
+	~ Double precioPorDificultad()
+}
+
+class Insumo{
+
+	- TipoInsumo tipoInsumo 
+	- Double porcentajeGanancia
+}
+
+Interface PrecioVenta{
+
+protected Double precioVenta()
+	
+}
+
+enum TipoInsumo{
+	PERIFERICO
+	HARDWARE
+	LIMPIEZA
+}
+
+enum Dificultad{
+
+	UNO
+	DOS
+	TRES
+	CUATRO
+	CINCO
+}
+
+
+class Factura{
+
+	- ArrayList<Item> [] itemsFactura
+}
+
+Comercio <|-- Producto
+
+Comercio <|-- Factura
+
+PrecioVenta <|.. Producto
+
+Producto <|-- Insumo
+
+Producto <|-- Servicio
+
+Servicio <|-- ServicioArmado
+
+Servicio <|-- ServicioReparacion
+
+
+
+@enduml

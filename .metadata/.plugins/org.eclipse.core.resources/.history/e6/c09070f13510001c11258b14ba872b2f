@@ -1,0 +1,41 @@
+import javax.swing.JOptionPane;
+
+public class Principal {
+	public static void main(String[] args) {
+
+		Instrumento instrumento = new Instrumento();
+
+		instrumento.tocar(JOptionPane.showInputDialog("¿que instrumento esta tocando?"), 
+				JOptionPane.showInputDialog("¿Tiene cuerdas?"));
+		
+//		FiguraGeometrica figura = new FiguraGeometrica();
+//		Circulo circulo = new Circulo();
+//		Rectangulo rectangulo = new Rectangulo();
+//		Cuadrado cuadrado = new Cuadrado();
+//
+//		
+//		
+//
+//		figura.tipo = JOptionPane.showInputDialog("ingrese el tipo de figura");
+//
+//		if (figura.tipo.equalsIgnoreCase("circulo")) {
+//			
+//			circulo.diametro = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el radio"));
+//			
+//			System.out.println("El perimetro del " + figura.tipo + " es: " + figura.calcularPerimetro(circulo));
+//			
+//		} else if (figura.tipo.equalsIgnoreCase("rectangulo")) {
+//			
+//			rectangulo.lado1 = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el alto"));
+//			rectangulo.lado2 = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el ancho"));
+//			
+//			System.out.println("El perimetro del " + figura.tipo + " es: " + figura.calcularPerimetro(rectangulo));
+//			
+//		} else {
+//			
+//			cuadrado.lado = Integer.parseInt(JOptionPane.showInputDialog("Ingrese un lado"));
+//		
+//			System.out.println("El perimetro del " + figura.tipo + " es: " + figura.calcularPerimetro(cuadrado));
+//		}
+	}
+}

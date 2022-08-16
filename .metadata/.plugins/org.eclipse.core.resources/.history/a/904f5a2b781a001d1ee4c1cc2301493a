@@ -1,0 +1,12 @@
+package domain;
+
+public class Cliente extends Persona {
+
+	private double credito;
+
+	public Cliente() {
+	}
+
+	public Cliente(int edad, String nombre, int telefono, double credito) {
+	}
+}

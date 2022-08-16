@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;derivada.Auto&apos; to &apos;Taxi&apos;&#x0D;&#x0A;- Original project: &apos;Herencia&apos;&#x0D;&#x0A;- Original element: &apos;derivada.Auto&apos;&#x0D;&#x0A;- Renamed element: &apos;derivada.Taxi&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Auto&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;derivada{Auto.java[Auto" matchStrategy="1" name="Taxi" qualified="false" references="true" similarDeclarations="false" stamp="1632792045768" textual="false" version="1.0"/>
+</session>

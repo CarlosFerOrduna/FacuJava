@@ -1,0 +1,13 @@
+package Array;
+
+public class ArrayMochila {
+
+	public static void main(String[] args) {
+
+		int[] sinMochila = new int[3];
+		int[] mochilaChica = new int[5];
+		int[] mochilaGrande = new int[7];
+
+	}
+
+}

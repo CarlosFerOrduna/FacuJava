@@ -1,0 +1,19 @@
+
+public class Principal {
+
+	public static void main(String[] args) {
+
+		Instancia instancia1 = Instancia.getInstancia();
+		Instancia instancia2 = Instancia.getInstancia();
+
+		System.out.println(instancia1);
+		System.out.println(instancia2);
+		
+		instancia1.setValue("Hola mundo");
+		System.out.println(instancia2.getValue());
+
+		instancia2.setValue("Chau mundo");
+		System.out.println(instancia1.getValue());
+	}
+
+}

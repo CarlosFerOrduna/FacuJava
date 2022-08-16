@@ -1,0 +1,50 @@
+1637879231864	Rename type 'pagar'
+1637879769570	Delete element
+1637880026003	Move compilation units
+1637880030589	Delete element
+1637880058021	Rename package 'derivadaGeneral'
+1637880292372	Delete element
+1637880298073	Delete element
+1637880414163	Delete element
+1637969977441	Move compilation units
+1637969990592	Move compilation units
+1637970007599	Rename type 'AreaDeTrabajoRepository'
+1637970019431	Rename type 'CombustibleRepository'
+1637970080213	Rename type 'EspecialidadRepository'
+1637970088732	Rename type 'MarcaRepository'
+1637970097396	Rename type 'ModeloRepository'
+1637971585556	Delete element
+1637971594764	Delete element
+1637971598555	Delete element
+1637971602923	Delete element
+1637971608833	Delete element
+1637971649387	Move compilation units
+1637971665819	Rename type 'AreaDeTrabajoService'
+1637971677668	Rename type 'CombustibleService'
+1637971697720	Rename type 'EspecialidadService'
+1637971706970	Rename type 'MarcaService'
+1637971731283	Rename type 'ModeloService'
+1637974065808	Rename type 'SimularDarosService'
+1637980989426	Delete element
+1637980992354	Delete element
+1637980997075	Delete element
+1637980999857	Delete element
+1637981259249	Delete element
+1637981324832	Delete element
+1637983089363	Delete element
+1637983242325	Delete element
+1637983246484	Delete element
+1637984135416	Rename field 'metodoDeFactura'
+1637984151564	Rename field 'metodoDeFactura'
+1637984465664	Delete element
+1637984468903	Delete element
+1638023831053	Rename local variable 'modelosHonda'
+1638023841059	Rename local variable 'modelosFiat'
+1638023850591	Rename local variable 'modelosVolkswagen'
+1638023861134	Rename local variable 'modelosChevrolet'
+1638023869665	Rename local variable 'modelosFord'
+1638024240868	Rename local variable 'modelos'
+1638024252425	Rename local variable 'modelos'
+1638024268012	Rename local variable 'modelos'
+1638024280007	Rename local variable 'modelos'
+1638024288053	Rename local variable 'modelos'

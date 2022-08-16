@@ -1,0 +1,16 @@
+package LoginMVC;
+
+import java.sql.Connection;
+
+public class Conexion {
+
+	Connection conexion;
+	
+	public Conexion() {
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+}

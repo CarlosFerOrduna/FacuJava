@@ -1,0 +1,14 @@
+package domain;
+
+public class Persona {
+
+	private int edad;
+	private String nombre;
+	private int telefono;
+	
+	public Persona() {
+	}
+	
+	public Persona(int edad, String nombre, int telefono) {
+	}
+}

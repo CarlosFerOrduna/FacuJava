@@ -1,0 +1,24 @@
+@startuml
+
+class Taller{
+- Bicicleta [] bicicletas
+}
+
+class Bicicleta {
+- String marca
+- String modelo
+- Integer cantKilometro
+}
+
+class BicicletaElectrica{
+- Double potencia
+}
+
+class Servicio{
+-
+}
+
+Bicicleta <|-- BicicletaElectrica
+Taller "Reparada 0..*"--"Es reparada 0..*" Bicicleta : servicio
+
+@enduml

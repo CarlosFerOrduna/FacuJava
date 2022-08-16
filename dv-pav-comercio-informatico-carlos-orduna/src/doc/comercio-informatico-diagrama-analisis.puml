@@ -1,0 +1,125 @@
+@startuml
+
+Title Comercio Informatico - Diagrama de analisis
+
+class Comercio{
+
+	- ArrayList<Producto> [] productos
+	- ArrayList<Producto> [] historial
+	- final int LIMITE_INSUMOS
+	- final int LIMITE_FACTURAS 
+	
+	+ void crearInsumo(String nombre, Double precioLista, TipoInsumo tipo, Double porcentageGanancia)
+	+ void crearServicioArmado(String nombre)
+	+ void crearServicioReparacion(String nombre, Dificultad nivelDificultas)
+	+ Producto buscarProductoPorNombre()
+	+ void modificarPrecioLista(String nombre, Double precio)
+	+ void addOperacion(String nombre)
+	+ String mostrarContenidiPorductoPorNombre(String nombre)
+	+ void mostrarContenidoProductos()
+	+ void mostrarContenidoHistoria()
+	+ void agrefarCantidadHorasServicio(String nombre, Double horas)
+	+ Integer cantidadServiciosSimples()
+	+ Double totalAPagar()
+	+ void cambiarPrecioLista()
+
+}
+
+abstract class Producto{
+	- String nombre
+	- Double precioLista
+	# static final IVA 
+	
+	~ String getNombre()
+	~ void setNombre(String nombre)
+	~ Double getPrecioLista()
+	~ void setPrecioLista(Double precioLista)
+	~ Object clone()
+	+ String toString()
+}
+
+abstract class Servicio{
+	
+	- Double cantidadHoras
+	
+	~ Double getCantidadHoras()
+	~ void setCantidadHoras(Double cantidadHoras)
+}
+
+class ServicioArmado{
+
+	~ Double precioVenta()
+	+ String toString()
+}
+
+class ServicioReparacion{
+
+	- Dificultad nivelDificultad
+	
+	~ Integer getNivelDificultad()
+	~ setNivelDificultad(Dificultad nivelDificultad)
+	~ Double precioVenta()	
+	~ Double precioPorDificultad()
+	+ String toString()
+}
+
+class Insumo{
+
+	- TipoInsumo tipoInsumo 
+	- Double porcentajeGanancia
+	
+	~ TipoInsumo getTipoInsumo()
+	~ void setTipoInsumo()
+	~ Double getPorcentageGanancia()
+	~ void setPorcentageGanancia()
+	+ String toString()
+}
+
+Interface Matematica{
+
+~ Double precioVenta()
+~ static Double sumarPorcentage(Double valor, Double porcentage)
+
+	
+}
+
+enum TipoInsumo{
+	PERIFERICO
+	HARDWARE
+	LIMPIEZA
+}
+
+enum Dificultad{
+
+	UNO(1)
+	DOS(2)
+	TRES(3)
+	CUATRO(4)
+	CINCO(5)
+	
+	- Integer nivelDificultad
+	
+	+ Integer getNivelDificultad()
+}
+
+Comercio -- Producto
+
+Matematica <|.. Producto
+
+Cloneable <|.. Producto
+
+Producto <|-- Insumo
+
+Insumo -- TipoInsumo
+
+Producto <|-- Servicio
+
+Servicio <|-- ServicioArmado
+
+Servicio <|-- ServicioReparacion
+
+ServicioReparacion -- Dificultad
+
+
+
+@enduml

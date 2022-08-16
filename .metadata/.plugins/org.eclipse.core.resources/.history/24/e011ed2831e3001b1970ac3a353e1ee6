@@ -1,0 +1,24 @@
+package PracticandoJava;
+
+import java.util.Random;
+public class Secuenciales4 {
+
+	public static void main(String[] args) {
+//		1) Dados como datos los sueldos de 10 trabajadores, obtener el total de sueldos
+//		pagados en el mes
+
+		int [] sueldos = new int[10];
+		
+		int pibot = 0;
+		
+		Random aleatorio = new Random();
+		
+		for(int i = 0; i < sueldos.length; i++) {
+			sueldos[i] = aleatorio.nextInt(100);
+			pibot = pibot + sueldos[i];
+		}
+		
+		
+	}
+
+}

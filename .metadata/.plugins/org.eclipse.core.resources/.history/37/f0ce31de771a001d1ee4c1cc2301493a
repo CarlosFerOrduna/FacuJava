@@ -1,0 +1,19 @@
+package test;
+
+import domain.Persona;
+
+public class Test {
+
+	public static void main(String[] args) {
+
+		Persona persona = new Persona();
+
+		persona.setEdad(27);
+		persona.setNombre("Carlos");
+		persona.setTelefono(1122516405);
+
+		System.out.println("Edad: " + persona.getEdad());
+		System.out.println("Nombre: " + persona.getNombre());
+		System.out.println("Telefono: " + persona.getTelefono());
+	}
+}

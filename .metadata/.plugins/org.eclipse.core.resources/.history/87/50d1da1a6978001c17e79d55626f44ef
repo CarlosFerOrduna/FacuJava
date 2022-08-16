@@ -1,0 +1,29 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>login</title>
+<link rel="stylesheet" href="css/style.css" />
+
+</head>
+<body>
+
+	<form action="">
+		<p>
+			<input type="text" name="username" id="username"
+				placeholder="Ingrese su nombre">
+		</p>
+		<p>
+			<input type="password" name="password" id="pasword"
+				placeholder="Ingrese su contraseña">
+		</p>
+		<p>
+			<input type="submit" name="send" id="send" value="Enviar">
+		</p>
+	</form>
+
+
+</body>
+</html>

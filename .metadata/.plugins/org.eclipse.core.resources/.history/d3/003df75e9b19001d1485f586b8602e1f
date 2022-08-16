@@ -1,0 +1,30 @@
+package test;
+
+public class Test {
+
+	public static void main(String[] args) {
+
+		int numeroIf = 1;
+
+		if (numeroIf < 0) {
+			System.out.println("Número negativo");
+		} else {
+			System.out.println("Número positivo");
+		}
+
+		int numeroWhile = 0;
+
+		while (numeroWhile < 3) {
+			System.out.println(numeroWhile);
+			numeroWhile++;
+		}
+
+		do {
+
+			numeroWhile = 3;
+
+			System.out.println(numeroWhile);
+
+		} while (numeroWhile < 3);
+	}
+}

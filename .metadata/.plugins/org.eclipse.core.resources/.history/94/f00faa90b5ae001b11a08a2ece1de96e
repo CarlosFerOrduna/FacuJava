@@ -1,0 +1,18 @@
+package Final;
+import javax.swing.JOptionPane;
+public class JuegoDeSuspenso {
+
+	public static void main(String[] args) {
+		
+		String nombrePersonaje;
+		
+		
+		JOptionPane.showMessageDialog(null , "Antes de comenzar tu aventura ten en cuenta que hay algunos factores que irán determinando el estado de tu personaje, no dejes que la Vida llegue a 0 (cero) o perderás (o quizás no). Cuando tu sed llegue a 0 (cero) comenzarás a perder vida paulatinamente y cada vez más rápido.\r\n"
+				+ "");
+		
+		
+		
+
+	}
+
+}

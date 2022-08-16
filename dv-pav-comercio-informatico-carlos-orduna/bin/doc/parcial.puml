@@ -1,0 +1,135 @@
+@startuml parcialProgramacionAvanzada
+
+
+package utilities{
+    class Matematica{
+        +static sumarPorcentaje(valor Double, porcentaje Double): Double
+    }
+}
+
+package domain{
+
+    class Comercio{
+        -static MAXIMOPRODUCTOS: Integer
+        -productos: Producto[MAXIMOPRODUCTO]
+        -static MAXIMOOPERACIONES: Integer
+        -contadorProductos: Integer
+
+        -static MAXIMOOPERACIONES: Integer
+        -operaciones: OPeracion[MAXIMOOPERACIONES]
+        -contadorOperaciones: Integer
+
+        -montoFactura: Double
+        -cantidadServiciosSimples: Integer
+
+        +Comercio()
+
+        -agregarFactura(producto: Producto): void
+        +calcularMontoFacturado(): void
+        +crearInsumo(nombre:String, precioLista:Double,tipoInsumo: TipoInsumo, porcentajeGanancia: Double):void
+        +crearServicioDeArmado(nombre: String,cantidadHoras:Double): void
+        +crearServicioDeReparacion(nombre: String, cantidadHoras: Double, dificultad: Integer):void
+        +buscarProductoPorNombre(nombre: String):Producto
+        -modificarPrecioListaFactura(precioAnterior: Double, nuevoPrecio: Double):void
+        +modificarPrecioListaProducto(nombre: String,precioLista:Double)
+        +addOperacion(clon: Producto, descripcionOperacion: String)
+        +verProductos():void
+        +verOperaciones():void
+        +obtenerCantidadServiciosSimples():void
+    }
+
+    class Operacion{
+        -producto: Producto
+        -descripcionOperacion: String
+        ~Operacion(producto: Producto, descripcionOperacion: String)
+        ~getProducto():Producto
+        ~getDescripcionOperacion():String
+    }
+
+    abstract Producto{
+        ~nombre: String
+        ~precioLista: Double
+        ~static iva: Double
+        ~Producto(nombre:String,precioLista:Double)
+        ~abstract getNombre():String
+        ~abstract getPrecioLista():Double
+        ~abstract getPrecioVenta():Double
+        ~abstract clonarProducto():Producto
+        ~abstract facturar():Double
+        ~abstract modificarPrecioLista(precioLista: Double)
+        ~abstract getIvaAgregado():Double
+    }
+
+    enum TipoInsumo{
+        PERIFERICO
+        HARDWARE
+        LIMPIEZA
+    }
+
+    class Insumo extends Producto{
+        -tipoInsumo: TipoInsumo
+        -porcentajeGanancia: Double
+        ~Insumo(nombre: String, precioLista:Double,tipoInsumo:TipoInsumo,porcentajeGanancia:Double)
+        ~getNombre():String
+        ~getPrecioLista(): Double
+        ~getPrecioVenta():Double
+        ~facturar():Double
+        ~modificaPrecioLista(precioLista:Double): void
+        ~clone(): Object
+        ~clonarProducto(): Producto
+        ~getIvaAgregado():Double
+        ~getTipo():String
+        ~getPorcentajeGanancia():Double
+
+    }
+
+    abstract Servicio extends Producto{
+        ~cantidadHoras: Double
+        ~Servicio(nombre:String,precioLista:Double,cantidadHoras: Double)
+        ~abstract getCantidadhoras():Double
+
+    }
+
+    class ServicioDeArmado extends Servicio{
+        ~ServicioDeArmado(nombre:String,cantidadHoras:Double)
+        ~getCandidadHoras():Double
+        ~getNombre():String
+        ~getPrecioLista():Double
+        ~getPrecioVenta():Double
+        ~facturar():Double
+        ~modificarPrecioLista(precioLista:Double):void
+        ~clone():Object
+        ~clonarProducto():Producto
+        ~getIvaAgregado():Double
+    }
+
+    class ServicioDeReparacion extends Servicio{
+        -dificultad: Integer
+        ~ServicioDeReparacion(nombre:String,cantidadHoras:Double,dificultad:Integer)
+        ~getDificultad():Integer
+        ~getCantidadHoras():Double
+        ~getNombre():String
+        ~getPrecioLista():Double
+        ~getPrecioVenta():Double
+        ~facturar():Double
+        ~modificarPrecioLista(precioLista:Double):void
+        ~clone():Object
+        ~clonarProducto():Producto
+        ~getIvaAgregado():Double
+    }
+}
+
+package test{
+    class ComercioTest{
+        +comercio: Comercio
+        +static main(String[] args):void
+    }
+}
+
+
+Insumo --* TipoInsumo
+Producto --* Comercio
+Operacion --* Comercio
+domain -up-> utilities :use
+domain <-right- test :use
+@enduml

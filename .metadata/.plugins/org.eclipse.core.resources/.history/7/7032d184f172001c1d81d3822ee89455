@@ -1,0 +1,16 @@
+package domain;
+
+import java.util.List;
+
+public class Mascota {
+
+	private String nombre;
+	private int edad;
+	private Foto fotoPrincipal;
+	private List<Foto> fotos;
+
+	public Mascota() {
+
+	}
+
+}

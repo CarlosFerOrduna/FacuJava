@@ -1,0 +1,153 @@
+package Final;
+
+import javax.swing.JOptionPane;
+import java.util.Random;
+
+public class pelea {
+
+	public static void main(String[] args) {
+		int option, startingLife, endOfBattleLife, enemyEndOfBattleLife, enemyStartingLife, enemyDamage, damageDone,
+				remainingBullets, battleRounds, totalDamage;
+		Random rnd = new Random();
+		String[] weapon = { "Pistola", "Cuchillo de cocina", "Palo de escoba" };
+// Integer[] options = {1, 3, 5, 7, 9, 11};
+// Double[] options = {3.141, 1.618};
+// Character[] options = {'a', 'b', 'c', 'd'};
+
+		option = JOptionPane.showOptionDialog(null, "Elija su arma", "Click a button", JOptionPane.DEFAULT_OPTION,
+				JOptionPane.INFORMATION_MESSAGE, null, weapon, weapon[0]);
+
+		System.out.println(option);
+		System.out.println("");
+// user
+		startingLife = 100;
+		enemyDamage = 0;
+		totalDamage = 0;
+		endOfBattleLife = startingLife - enemyDamage;
+// System.out.println("Your life at the end: " + endOfBattleLife);
+
+// enemy
+		enemyStartingLife = 100;
+		damageDone = 0;
+		enemyEndOfBattleLife = enemyStartingLife - damageDone;
+// System.out.println("Enemy end of battle: " + enemyEndOfBattleLife);
+
+// counter
+		battleRounds = 0;
+
+		while (endOfBattleLife > 0 && enemyEndOfBattleLife > 0) {
+			if (option == 0) {
+				for (remainingBullets = 2; remainingBullets >= 0; remainingBullets--) { // tiene
+																						// 3
+																						// disparos
+					enemyDamage = rnd.nextInt(20) + 10; // min 10 max 30
+					endOfBattleLife = endOfBattleLife - enemyDamage;
+
+					damageDone = rnd.nextInt(50); // min 0 max 50
+					enemyEndOfBattleLife = enemyEndOfBattleLife - damageDone;
+
+					battleRounds++;
+
+				}
+				remainingBullets = 0;
+
+				enemyDamage = rnd.nextInt(20) + 10; // min 10 max 30
+				endOfBattleLife = endOfBattleLife - enemyDamage;
+
+				damageDone = rnd.nextInt(10); // min 0 max 5
+				enemyEndOfBattleLife = enemyEndOfBattleLife - damageDone;
+
+				battleRounds++;
+
+			} else if (option == 1) {
+
+				enemyDamage = rnd.nextInt(20) + 10; // min 10 max 30
+				endOfBattleLife = endOfBattleLife - enemyDamage;
+
+				damageDone = rnd.nextInt(25); // min 0 max 20
+				enemyEndOfBattleLife = enemyEndOfBattleLife - damageDone;
+
+				battleRounds++;
+
+			} else if (option == 2) {
+				enemyDamage = rnd.nextInt(20) + 10; // min 10 max 30
+				endOfBattleLife = endOfBattleLife - enemyDamage;
+
+				damageDone = rnd.nextInt(10); // min 0 max 10
+				enemyEndOfBattleLife = enemyEndOfBattleLife - damageDone;
+
+				battleRounds++;
+
+			} else {
+				// no option selected - you fight with your fists
+				enemyDamage = rnd.nextInt(20) + 10; // min 10 max 30
+				endOfBattleLife = endOfBattleLife - enemyDamage;
+
+				damageDone = rnd.nextInt(3); // min 0 max 3
+				enemyEndOfBattleLife = enemyEndOfBattleLife - damageDone;
+
+				battleRounds++;
+			}
+
+		}
+		
+		
+		if (endOfBattleLife <= 0 && enemyEndOfBattleLife > 0) {
+
+			System.out.println("Rondas de batalla: " + battleRounds);
+			System.out.println("El enemigo que comienza la vida es: " + enemyStartingLife);
+			System.out.println("Tu vida inicial es: " + startingLife);
+			System.out.println("");
+			
+			enemyDamage = battleRounds + enemyDamage;
+			damageDone = battleRounds + damageDone;
+			
+			System.out.println("Total del daño del enemigo: " + enemyDamage);
+			System.out.println("Daño total que hiciste: " + totalDamage);
+			System.out.println("");
+			
+			System.out.println("Tu moriste.");
+			System.out.println("Juego terminado.");
+
+		} else if (endOfBattleLife > 0 && enemyEndOfBattleLife <= 0) {
+			System.out.println("Rondas de batalla: " + battleRounds);
+			System.out.println("El enemigo que comienza la vida es: " + enemyStartingLife);
+			System.out.println("Tu vida inicial es: " + startingLife);
+			System.out.println("");
+		
+			enemyDamage = battleRounds + enemyDamage;
+			damageDone = battleRounds + damageDone;
+			
+			System.out.println("Total del daño del enemigo: " + enemyDamage);
+			System.out.println("Daño total que hiciste: " + damageDone);
+			System.out.println("");
+
+			System.out.println("Derrotaste a tu enemigo.");
+
+		} else {
+			System.out.println("Rondas de batalla: " + battleRounds);
+			System.out.println("El enemigo que comienza la vida es: " + enemyStartingLife);
+			System.out.println("Tu vida inicial es: " + startingLife);
+			System.out.println("");
+
+			enemyDamage = battleRounds + enemyDamage;
+			damageDone = battleRounds + damageDone;
+			
+			System.out.println("Total del daño del enemigo: " + enemyDamage);
+			System.out.println("Daño total que hiciste: " + damageDone);
+			System.out.println("");
+
+			System.out.println("Los dos murieron.");
+			System.out.println("Juego terminado.");
+
+		}
+	}
+}
+
+//The method showOptionDialog(Component, Object, String, int, int,
+//Icon,
+//Object[], Object) in the type JOptionPane is not applicable for the
+//arguments
+//(null, String, String, int, int, null, int, String)
+
+//at final_01.test_damage.main(test_damage.java:18)

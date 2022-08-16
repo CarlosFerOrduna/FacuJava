@@ -1,0 +1,33 @@
+import javax.swing.JOptionPane;
+
+public class MostrarMuneco {
+
+	public static void main(String[] args) {
+	
+		int error;
+		
+		String [] pregunta = {"opcion1" , "opcion2", "opcion3", "opcion4", "opcion5" }; 
+		
+		error = JOptionPane.showOptionDialog(null, "¿dice error?", "¿lo es?", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE
+				 , null, pregunta, pregunta[0]);
+
+		error = MostrarMuneco(error);
+		
+		public static int mostrarAhorcado(int cantidadErrores) {
+			
+			if (error == opcion[0]) {
+				
+			}
+			
+		}
+		
+		
+		
+		
+		
+		
+	}
+
+}
+//int tomasCantimplora = JOptionPane.showOptionDialog(null, mensaje,titulo,JOptionPane.DEFAULT_OPTION, 
+//JOptionPane.QUESTION_MESSAGE, null, opciones,opciones[0]);

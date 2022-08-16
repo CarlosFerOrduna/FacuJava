@@ -1,0 +1,21 @@
+package com.holajdbc;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.util.ArrayList;
+import java.util.List;
+
+public class FacturaRepository {
+
+	public void inserta(Factura factura) {
+
+		String sql = "insert into Facturas (concepto, importe) values (?,?)";
+
+		List<Factura> lista = new ArrayList<>();
+		try (Connection connection = getConexion();
+				PreparedStatement sentencia = connection.prepareStatement(sql)){
+					
+				}
+	}
+
+}

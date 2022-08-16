@@ -1,0 +1,24 @@
+package PracticandoJava;
+
+import java.util.Random;
+
+import javax.swing.JOptionPane;
+
+public class Secuenciales3 {
+
+	public static void main(String[] args) {
+
+//		Se debe desarrollar un programa que pida el ingreso del precio (número decimal) de un
+//		artículo y la cantidad (número entero) que lleva el cliente. Mostrar lo que debe abonar el
+//		comprador (cantidad por el precio del artículo).
+
+		double precio = 0;
+		int cantidad;
+		Random aleatorio = new Random();
+
+		precio = precio + aleatorio.nextDouble()+1;
+		
+		System.out.println(precio);
+	}
+
+}

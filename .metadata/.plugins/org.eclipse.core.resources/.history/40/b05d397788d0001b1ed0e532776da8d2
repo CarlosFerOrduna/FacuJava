@@ -1,0 +1,32 @@
+import javax.swing.JOptionPane;
+
+public class MostrarMuneco {
+
+	public static void main(String[] args) {
+	
+		String error;
+		
+		String [] pregunta = {"opcion1" , "opcion2" }; 
+		
+		error = JOptionPane.showOptionDialog(null, "¿dice error?", "¿lo es?", JOptionPane.DEFAULT_OPTION, 0, null, args, error)
+
+		public static void mostrarAhorcado(int cantidadErrores) {
+			
+			
+			
+		}
+		
+		
+		
+		
+		
+		
+	}
+
+}
+//int tomasCantimplora = JOptionPane.showOptionDialog(null,
+//        "Estruendo proveniente de los pisos inferiores, te sobresaltas, trastabillas, y por poco caes por la escalera que tienes a"
+//                        + "\ntu derecha. Logras recuperarte pero tu cantimplora que tenías en la mano cae varios escalones abajo generando un ruido"
+//                        + "\nque resuena en todo el edificio." + " \nEl tintineo frena.",
+//        "¿Qué harás?", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, opciones,
+//        opciones[0]);

@@ -1,0 +1,14 @@
+package domain;
+
+public class Colaborador {
+
+	private String nombre;
+	private String apellido;
+	private int celular;
+	private String email;
+	
+	public Colaborador(String nombre, String apellido, int celular, String email) {
+		this.nombre = nombre;
+	}
+
+}

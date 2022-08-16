@@ -1,0 +1,7 @@
+1639533564559	Delete element
+1639577938125	Rename local variable 'ubicacionCercana'
+1639578248645	Rename local variable 'guardarDistanciaMenor'
+1639611637297	Rename field 'saldo'
+1639611654899	Rename method 'getPago'
+1639611666056	Rename method 'setPago'
+1639628098865	Rename method 'setReparacionAReportar'

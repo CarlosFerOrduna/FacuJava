@@ -1,0 +1,9 @@
+package domain;
+
+public class Coche {
+
+	private int numeroPuertas;
+	
+	public Coche() {
+	}
+}

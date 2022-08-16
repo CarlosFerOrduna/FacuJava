@@ -1,0 +1,9 @@
+package domain;
+
+public class Mascota {
+
+	private int edad;
+	private String nombre;
+	private 
+	
+}

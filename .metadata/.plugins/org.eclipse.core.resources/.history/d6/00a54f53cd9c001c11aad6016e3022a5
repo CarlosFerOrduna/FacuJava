@@ -1,0 +1,13 @@
+
+public class Principal {
+
+	public static void main(String[] args) {
+
+		Instancia instancia1 = null;
+		Instancia instancia2;
+		
+		System.out.println(instancia1.getInstancia());
+		System.out.println(instancia2.getInstancia());
+	}
+
+}

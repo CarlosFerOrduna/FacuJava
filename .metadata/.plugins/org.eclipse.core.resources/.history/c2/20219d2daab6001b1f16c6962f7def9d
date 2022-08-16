@@ -1,0 +1,30 @@
+package For;
+import javax.swing.JOptionPane;
+public class EjercicioFor4 {
+
+	public static void main(String[] args) {
+	//	4) Dados n números enteros, calcular el menor de ellos
+
+		int cantidadNumeros;
+		int numeros;
+		cantidadNumeros = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad de numeros"));		
+		
+		int[] n = new int[cantidadNumeros];
+		
+		for (int i = 0 ; i < cantidadNumeros; i++) {
+			numeros = Integer.parseInt(JOptionPane.showInputDialog("Ingrese un dato") + (i + 1));
+			n [i] = cantidadNumeros;
+		}
+		int menor;
+		menor = n[0];
+		
+		for(int i = 0 ; i < cantidadNumeros ; i++) {
+			if(n[0] > menor ) {
+				menor = n[i];
+			}else {
+				
+			}
+		}JOptionPane.showMessageDialog(null, "El menor es : " + menor);
+	}
+
+}	

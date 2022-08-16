@@ -1,0 +1,13 @@
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.text.ParseException;
+
+public class Example {
+
+    public static void main(String[] args) {
+        long milliSecond = 1551798059000L;
+        Date date = new Date();
+        date.setTime(milliSecond);
+        System.out.println(new SimpleDateFormat().format(date));
+    }
+}

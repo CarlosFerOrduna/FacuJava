@@ -1,0 +1,68 @@
+package whileDoWhile;
+import java.util.concurrent.ForkJoinPool;
+
+import javax.swing.JOptionPane;
+public class EjerciciosWhile4 {
+
+	public static void main(String[] args) {
+//	4) Se pide realizar una factura de Edenor. Por cada cliente se ingresa el
+//	nombre, tipo de cliente, dirección, registro inicial de medidor y registro final de medidor. Para
+//	finalizar se ingresara un * en nombre de cliente 
+//	Tipo de cliente			valor del kw/h 
+
+//	A o C hasta				140 o menos $3.20; >140 y < 300 $4, si > 300 $4.5 
+//	B o D hasta 			200 o menos $4.5; si > 200 $5.3
+		
+		
+//	Al finalizar el día se pide indicar
+//	a) cantidad de facturas realizadas
+//	b) total de monto facturado
+//	c) Total de kw/h consumidos
+
+		String nombre, direccion, tipoCliente;
+		double inicioMedidor, finMedidor, resultado, importe, cantidadFactura = 0, kwConsumidos = 0, totalFacturado = 0;
+		
+		nombre = JOptionPane.showInputDialog("Ingrese el nombre de cliente");
+		direccion = JOptionPane.showInputDialog("Ingrese su direccion");
+		inicioMedidor = Integer.parseInt(JOptionPane.showInputDialog("Kilowatt iniciales en el medidor"));
+		finMedidor = Integer.parseInt(JOptionPane.showInputDialog("Kilowatt finales del medidor"));
+		tipoCliente = JOptionPane.showInputDialog("Ingrese el tipo de cliente");			
+		
+		resultado = finMedidor - inicioMedidor;
+		
+		while(!nombre.equals("*")) {
+			if(tipoCliente.equalsIgnoreCase("a") || tipoCliente.equalsIgnoreCase("c")) {
+//				140 o menos $3.20; >140 y < 300 $4, si > 300 $4.5
+				if(resultado < 140) {
+					importe = resultado * 3.2;
+				}else if (resultado >= 140 && resultado < 300){
+					importe = resultado * 4;
+				}else {
+					importe = resultado * 4.5;
+				}
+			}else {
+//				200 o menos $4.5; si > 200 $5.3
+				if(resultado <= 200) {
+					importe = resultado * 4.5;
+				}else {
+					importe = resultado * 5.3;
+				}
+		}
+		nombre = JOptionPane.showInputDialog("Ingrese el nombre de cliente");
+		direccion = JOptionPane.showInputDialog("Ingrese su direccion");
+		inicioMedidor = Integer.parseInt(JOptionPane.showInputDialog("Kilowatt iniciales en el medidor"));
+		finMedidor = Integer.parseInt(JOptionPane.showInputDialog("Kilowatt finales del medidor"));
+		tipoCliente = JOptionPane.showInputDialog("Ingrese el tipo de cliente");			
+		
+		cantidadFactura++;
+		kwConsumidos = kwConsumidos + resultado;
+		totalFacturado = totalFacturado + importe;
+		
+		
+		
+	}
+		System.out.println("La cantidad de facturas son:" + cantidadFactura);
+		System.out.println("La cantidad kw consumidos son:" + kwConsumidos);
+		System.out.println("El total facturado es :" + totalFacturado);
+	}
+}

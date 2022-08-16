@@ -1,0 +1,70 @@
+package whileDoWhile;
+import java.util.concurrent.ForkJoinPool;
+
+import javax.swing.JOptionPane;
+public class EjerciciosWhile4 {
+
+	public static void main(String[] args) {
+//	Se pide realizar una factura de Edenor. 
+//	Por cada cliente se ingresa el
+//	nombre, tipo de cliente y la cantidad de kv/h consumidos.
+//	Para  finalizar se ingresara un * en nombre de cliente 
+
+
+		String nombre, tipoCliente;
+		double cantidadKV, resultado = 0, importe, cantidadFactura = 0, kwConsumidos = 0, totalFacturado = 0;
+		
+		nombre = JOptionPane.showInputDialog("Ingrese el nombre de cliente");
+		
+		
+		tipoCliente = JOptionPane.showInputDialog("Ingrese el tipo de cliente");			
+		
+		cantidadKV = Double.parseDouble(JOptionPane.showInputDialog("Ingrese la cantidad consumida"));
+		
+		while(!nombre.equals("*")) {
+			
+			if(tipoCliente.equalsIgnoreCase("a") || tipoCliente.equalsIgnoreCase("c")) {
+				
+//				140 o menos $3.20; >140 y < 300 $4, si > 300 $4.5
+				
+				if(resultado <= 140) {
+					
+					importe = resultado * 3.2;
+					
+				}else if (resultado > 140 && resultado < 300){
+					
+					importe = resultado * 4;
+					
+				}else {
+					
+					importe = resultado * 4.5;
+					
+				}
+			}else {
+				
+//				200 o menos $4.5; si > 200 $5.3
+				
+				if(resultado <= 200) {
+					
+					importe = resultado * 4.5;
+					
+				}else {
+					
+					importe = resultado * 5.3;
+				}
+		}
+		nombre = JOptionPane.showInputDialog("Ingrese el nombre de cliente");
+		
+		
+		cantidadFactura++;
+		kwConsumidos = kwConsumidos + resultado;
+		totalFacturado = totalFacturado + importe;
+		
+		
+		
+	}
+		System.out.println("La cantidad de facturas son:" + cantidadFactura);
+		System.out.println("La cantidad kw consumidos son:" + kwConsumidos);
+		System.out.println("El total facturado es :" + totalFacturado);
+	}
+}

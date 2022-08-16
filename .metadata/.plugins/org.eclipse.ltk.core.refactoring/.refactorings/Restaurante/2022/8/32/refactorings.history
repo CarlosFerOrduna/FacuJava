@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;menor&apos; in &apos;service.MesaService.obtenerUltimoNumero()&apos; to &apos;mayor&apos;&#x0D;&#x0A;- Original project: &apos;Restaurante&apos;&#x0D;&#x0A;- Original element: &apos;service.MesaService.obtenerUltimoNumero().menor&apos;&#x0D;&#x0A;- Renamed element: &apos;menor&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;menor&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;service{MesaService.java[MesaService~obtenerUltimoNumero@menor!1304!1317!1308!1312!I!0!false" name="mayor" references="true" stamp="1659485326606" version="1.0"/>
+</session>

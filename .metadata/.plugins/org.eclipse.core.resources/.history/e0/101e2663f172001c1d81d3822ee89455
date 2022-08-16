@@ -1,0 +1,10 @@
+package domain;
+
+public class Mascota {
+
+	private int edad;
+	private String nombre;
+	private Foto fotoPrincipal;
+	private List<Foto> fotos;
+
+}

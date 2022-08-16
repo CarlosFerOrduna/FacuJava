@@ -1,0 +1,12 @@
+package com.holajdbc;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		
+		FacturaRepository fr = new FacturaRepository();
+		Factura f = new Factura(1, "tablet", 200);
+		
+	}
+
+}

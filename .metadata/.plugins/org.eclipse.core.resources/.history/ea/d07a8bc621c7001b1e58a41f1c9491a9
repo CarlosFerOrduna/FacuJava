@@ -1,0 +1,304 @@
+package Final;
+
+import javax.swing.JOptionPane;
+import java.util.Random;
+
+public class Historia {
+
+	public static void main(String[] args) {
+
+		Random random = new Random();
+
+		/* ------------------------- */
+		/* VARIABLES GENERALES */
+		/* ------------------------- */
+
+		/* ----- ----- JUGADOR ----- ----- */
+		int vida, sed;
+		int pociónVidaCura, pociónDañoSuma;
+		int dañoMaximoArma = 0;
+		int armaEscogida;
+		int dañoJugador;
+		String equipaje;
+		String arma = "";
+
+		/* ----- ----- CONTADORES ----- ----- */
+		int pociónVida = 3;
+		int pociónDaño = 3;
+		int bonusDaño = 0;
+		int rondas = 0;
+		int llaves = 0;
+
+		/* ----- ----- ENEMIGOS ----- ----- */
+		int vidaEnemigo;
+		int dañoMaximoEnemigo = 0;
+		int dañoEnemigo;
+		String enemigo, armaEnemigo;
+
+		/* ----- ----- HARDCODEO ----- ----- */
+		vida = 100;
+		sed = 80;
+		/* ------------------------- */
+		/* ARRAYS GENERALES */
+		/* ------------------------- */
+		String enemigos[] = { "una anciana", "Bob Esponja", "Cristian Castro", "Ricky Fort", "Pikachu" };
+		String armasEnemigos[] = { "una katana", "un bazuka", "una cámara de fotos", "un palo de amasar",
+				"una toalla" };
+		String armas[] = { "Palo de escoba", "Cuchillo de cocina", "Puños" };
+
+		/* ------------------------- */
+		/* RANDOMS PARA LA PELEA */
+		/* ------------------------- */
+
+		/* ----- ----- POCIONES ----- ----- */
+		pociónVidaCura = random.nextInt(40) + 10; // maximo de 50 y minimo de 10
+		pociónDañoSuma = random.nextInt(15) + 15; // maximo de 30 y minimo de 15
+
+		/* ------------------------- */
+		/* SELCCION ARMA HARDCODEADA */
+		/* ------------------------- */
+
+//		armaEscogida = JOptionPane.showOptionDialog(null, "Elige tu arma", "armas", JOptionPane.DEFAULT_OPTION,
+//				JOptionPane.INFORMATION_MESSAGE, null, armas, armas[0]);
+//
+//		if (armaEscogida == 1) {
+//			/* ----- ----- PALO DE ESCOBA ----- ----- */
+//			arma = armas[0];
+//			dañoMaximoArma = random.nextInt(15) + 1;
+//		} else if (armaEscogida == 2) {
+//			/* ----- ----- CUCHICLLO DE COCINA ----- ----- */
+//			arma = armas[1];
+//			dañoMaximoArma = random.nextInt(30) + 1;
+//		} else if (armaEscogida == 3) {
+//			/* ----- ----- PUÑOS ----- ----- */
+//			arma = armas[2];
+//			dañoMaximoArma = random.nextInt(5) + 1;
+//		}
+
+		/* ------------------------- */
+		/* INTRODUCCION */
+		/* ------------------------- */
+		JOptionPane.showMessageDialog(null,
+				"Antes de comenzar tu aventura, ten en cuenta que hay algunos factores que determinan el estado de tu personaje:"
+						+ "\n Si la Vida llega a 0 (cero), morirás. \n Si tu Sed llega a 100 (cien) comenzarás a perder Vida cada vez más rápido. "
+						+ "\n Las decisiones que tomes definirán tu camino. \n El personaje de esta historia es masculino",
+				"El Edificio - Introducción", JOptionPane.INFORMATION_MESSAGE);
+
+		/* ----- ----- STATUS ----- ----- */
+		JOptionPane.showMessageDialog(null,
+				"\n> Vida = " + vida + "\n> Sed = " + sed , " Tu estado actual",
+				JOptionPane.INFORMATION_MESSAGE);
+
+		/* ------------------------- */
+		/* CAPITULO 01 */
+		/* ------------------------- */
+		JOptionPane.showMessageDialog(null,
+				"\n Son las 2 de la madrugada, estás sediento en un pasillo lúgubre. A lo lejos oyes un tintineo metálico."
+						+ "\n Tomas tu cantimplora, la abres sobre tu boca y esperas a que esa última gota de agua moje tus labios resecos "
+						+ "\n La saboreas sabiendo que no podrás tomar más hasta conseguir una nueva fuente de agua potable y finalmente la tragas.",
+				"El Edificio - Capítulo 01", JOptionPane.INFORMATION_MESSAGE);
+
+		sed = sed - 1;
+		/* ----- ----- LA GOTA LE SACA 1 PUNTO DE SED ----- ----- */
+		JOptionPane.showMessageDialog(null, "Haz perdido 1 punto de Sed" + "\n> Sed: " + sed, "Tu sed actual",
+				JOptionPane.WARNING_MESSAGE);
+
+		String[] opciones = { "Tomas tu cantimplora", "La dejas allí" };
+		/* ------------------------- */
+		/* DECISION */
+		/* ------------------------- */
+		int tomasCantimplora = JOptionPane.showOptionDialog(null,
+				"Estruendo proveniente de los pisos inferiores, te sobresaltas, trastabillas, y por poco caes por la escalera que tienes a tu derecha."
+						+ " \n Logras recuperarte pero tu cantimplora que tenías en la mano cae varios escalones abajo generando un ruido que resuena en todo el edificio."
+						+ " \n El tintineo frena.",
+				"¿Qué harás?", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[0]);
+
+		if (tomasCantimplora == 0) {
+			/* ----- ----- TOMAS TU CANTIMPLORA ----- ----- */
+			String[] pasilloConCantimplora = { "Pruebas la de la izquierda", "Pruebas la de la derecha",
+					"Continúas hasta la habitación con luz" };
+
+			JOptionPane.showMessageDialog(null,
+					"Bajas la escalera haciendo el menor ruido posible, tomas tu cantimplora, la amarras a tu pantalón y continúas bajando hasta el piso inferior."
+							+ "\n Llegas a un nuevo pasillo. Optas por avanzar pisando suave para no hacer mucho ruido."
+							+ " Detrás de ti oyes unos pasos subir rápidamente"
+							+ "\n las escaleras por lo que te ves obligado a acelerar tu paso.",
+					"Tomas tu Cantimplora", JOptionPane.INFORMATION_MESSAGE);
+
+			/* ------------------------- */
+			/* DECISION */
+			/* ------------------------- */
+			int tresPuertas = JOptionPane.showOptionDialog(null,
+					" Notas que unos metros adelante hay 3 puertas, una  a cada lado del pasillo y una última al fondo del mismo."
+							+ "\n La del fondo está apenas abierta y de allí se escapa un haz de luz frío que llega hasta la puerta "
+							+ "\n de la izquierda. Sigues avanzando y cuando estás por llegar a las dos puertas laterales, oyes una pequeña "
+							+ "\n campana y una silueta cruza el haz de luz de un lado a otro dejándote a oscuras por unos segundos."
+							+ "\n Estás inmóvil.",
+					"¿Qué haces?", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null,
+					pasilloConCantimplora, pasilloConCantimplora[0]);
+
+			if (tresPuertas == 0) {
+				/* ----- ----- PUERTA DE LA IZQUIERDA ----- ----- */
+
+				String[] objetosArmario = { "Palo de escoba", "Cuchillo de mesa", "Una llave común" };
+
+				int objetoArmario = JOptionPane.showOptionDialog(null,
+						"Giras el picaporte y notas que la puerta está abierta, no hay luz pero aún así ingresas cerrando la puerta detrás tuyo. "
+								+ "\n Los pasos que escuchabas subir por la escalera parecieran haber seguido de largo. Tanteas las paredes con tus manos y "
+								+ "\n encuentras un interruptor de luz. Lo presionas y una tenue luz se prende."
+								+ "\n Estás en un armario de limpieza. Ves tres objetos a tu alrededor pero solamente puedes llevar uno.",
+						"¿Cuál escoges?", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null,
+						objetosArmario, objetosArmario[0]);
+
+				if (objetoArmario == 0) {
+					arma = objetosArmario[0];
+				} else if (objetoArmario == 1) {
+					arma = objetosArmario[1];
+				} else if (objetoArmario == 2) {
+					llaves++;
+				}
+
+			} else if (tresPuertas == 1) {
+				/* ----- ----- PUERTA DE LA DERECHA ----- ----- */
+				JOptionPane.showMessageDialog(null,
+						"Giras el picaporte, tiras con fuerza para abrir la puerta pero esta no se mueve. Está cerrada."
+								+ "\n Los pasos que suben por la escalera están muy cerca. Te das vuelta desesperado y vas a probar la puerta de la izquierda,"
+								+ "\n giras el picaporte y se abre. Pero ya es tarde, los hombres que subían por la escalera están en tu mismo piso.",
+						"Puerta de la derecha", JOptionPane.INFORMATION_MESSAGE);
+
+				/* ------------------------- */
+				/* PRIMER COMBATE */
+				/* ------------------------- */
+
+				/* ------------------------- */
+				/* RANDOM DE ENEMIGO Y SU ARMA */
+				/* ------------------------- */
+
+				/* ----- ----- ENEMIGO ----- ----- */
+				enemigo = enemigos[random.nextInt(enemigos.length)];
+
+				/* ----- ----- ANCIANA ----- ----- */
+				if (enemigo == enemigos[0]) {
+					vidaEnemigo = random.nextInt(100) + 100;
+				} /* ----- ----- BOB ESPONJA ----- ----- */
+				else if (enemigo == enemigos[1]) {
+					vidaEnemigo = random.nextInt(100) + 75;
+				} /* ----- ----- CRISTIAN CASTRO ----- ----- */
+				else if (enemigo == enemigos[2]) {
+					vidaEnemigo = random.nextInt(100) + 50;
+				} /* ----- ----- RICARDO FORT ----- ----- */
+				else if (enemigo == enemigos[3]) {
+					vidaEnemigo = random.nextInt(100) + 25;
+				} /* ----- ----- PIKACHU ----- ----- */
+				else {
+					vidaEnemigo = random.nextInt(100) + 35;
+				}
+
+				/* ----- ----- ARMA ENEMIGO ----- ----- */
+				armaEnemigo = armasEnemigos[random.nextInt(armasEnemigos.length)];
+
+				/* ----- ----- KATANA ----- ----- */
+				if (armaEnemigo == armasEnemigos[0]) {
+					dañoMaximoEnemigo = random.nextInt(30);
+
+				} /* ----- ----- BAZUKA ----- ----- */
+				else if (armaEnemigo == armasEnemigos[1]) {
+					dañoMaximoEnemigo = random.nextInt(60);
+
+				} /* ----- ----- CAMARA DE FOTOS ----- ----- */
+				else if (armaEnemigo == armasEnemigos[2]) {
+					dañoMaximoEnemigo = random.nextInt(5);
+
+				} /* ----- ----- PALO DE AMASAR ----- ----- */
+				else if (armaEnemigo == armasEnemigos[3]) {
+					dañoMaximoEnemigo = random.nextInt(15);
+
+				} /* ----- ----- TOALLA ----- ----- */
+				else if (armaEnemigo == armasEnemigos[4]) {
+					dañoMaximoEnemigo = random.nextInt(80);
+				}
+			}
+
+			else if (tresPuertas == 2) {
+				/* ----- ----- HABITACION CON LUZ ----- ----- */
+				JOptionPane.showMessageDialog(null,
+						"Te apresuras a avanzar haciendo el menor ruido posible porque oyes los pasos cada vez más cerca. "
+								+ "\n Llegas a la puerta entornada, te arrimas un poco para pispear dentro y parece que no hay nadie. "
+								+ "\n Empujas la puerta, ingresas y la entornas como estaba antes detrás tuyo.",
+						"Habitación con luz", JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(null,
+						"Ya dentro miras donde has ingresado. En el centro de la habitación ves un escritorio y una silla. "
+								+ "\n Sobre el escritorio hay una máquina de escribir con una hoja y un pequeño monitor de vigilancia "
+								+ "\n que ilumina todo el conjunto con una luz fría.");
+
+				String[] maquinaEscribir = { "Te sientas", "Buscas como salir de allí" };
+
+				int opcionMaquinaEscribir = JOptionPane.showOptionDialog(null,
+						"Te acercas al escritorio para ver la pantalla y te apoyas sobre el respaldo de la silla con una mano. "
+								+ "\n La imagen del televisor se cambia a ruido blanco e inmediatamente después la imagen se torna negra "
+								+ "\n y ves cómo se va escribiendo el siguiente mensaje en la pantalla:",
+						"¿Qué haces?", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, maquinaEscribir,
+						maquinaEscribir[0]);
+
+				if (opcionMaquinaEscribir == 0) {
+					/* ----- ----- TE SIENTAS EN EL ESCRITORIO ----- ----- */
+					JOptionPane.showMessageDialog(null,
+							"Intentas arrastrar la silla hacia atrás y notas que no es tan fácil, hay una cierta resistencia que la frena. "
+									+ "\n Tomas la silla con la otra mano y la arrastras lo más fuerte que puedes con ambas manos. La silla se mueve "
+									+ "\n rápidamente y se frena sola.",
+							"Te sientas", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(null,
+							"Te sientas en la silla e inmediatamente esta se mueve hacia adelante apretándonte contra el escritorio y "
+									+ "\n dejándote inmóvil. Delante de tí, en la pantalla, el mensaje anterior se borra y se escribe la siguiente palabra:"
+									+ "\n 'Escoge'",
+							"Te sientas", JOptionPane.WARNING_MESSAGE);
+					JOptionPane.showMessageDialog(null,
+							"Notas que la hoja en la máquina de escribir tiene una serie de letras escritas hacia abajo. Una letra por renglón:"
+									+ "\n N" + "\n Ñ" + "\n Q" + "\n R" + "\n T" + "\n W",
+							"Te sientas", JOptionPane.INFORMATION_MESSAGE);
+
+					String[] opcionesLetras = { "X", "Y" };
+					JOptionPane.showOptionDialog(null,
+							"La imagen del televisor cambia a ruido blanco y luego la pantalla se divide en dos recuadros mostrando una imagen "
+									+ "\n estática en cada uno. En la esquina superior izquierda de cada recuadro ves una letra de color verde."
+									+ "\n La imagen de la izquierda - letra “X” - muestra un río."
+									+ "\n La imagen de la derecha - letra “Y” -  muestra una nube.",
+							"Escoge", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, opcionesLetras,
+							opcionesLetras[0]);
+				} else if (opcionMaquinaEscribir == 1) {
+					/* ----- ----- FALTA DECISION - BUSCAS COMO SALIR DE ALLI ----- ----- */
+				}
+
+			}
+
+		} else if (tomasCantimplora == 1) {
+			/* ----- ----- DEJAS TU CANTIMPLORA ALLÍ ----- ----- */
+
+			String[] pasilloSinCantimplora = { "Empujas la puerta fuertemente",
+					"Corres hacia atrás y subes al piso superior" };
+
+			JOptionPane.showMessageDialog(null,
+					"Para tus adentros sientes que has cometido un error gravísimo, no tienes tiempo para agarrar la cantimplora,"
+							+ "\n seguro más adelante encontrarás otra, sientes ganas de salir de ese lugar. Miras a tus alrededores rápidamente,"
+							+ "\n no sabes qué hacer.",
+					"Dejas la cantimplora", JOptionPane.INFORMATION_MESSAGE);
+
+			int puertaPesada = JOptionPane.showOptionDialog(null,
+					"Oyes varios pasos subir rápidamente las escaleras por lo que comienzas a caminar desesperadamente hacia delante, "
+							+ "\n hacia la oscuridad del pasillo. Hay tan poca luz que tienes que usar tus manos para guiarte. Te encuentras "
+							+ "\n una puerta, pero parece estar trabada del otro lado porque no puedes abrirla. Quizás si la empujas fuertemente "
+							+ "\n puedes llegar a abrirla o tal vez lo mejor sea volver rápidamente hacia atrás y subir al piso superior.",
+					"La puerta", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, pasilloSinCantimplora,
+					pasilloSinCantimplora[0]);
+
+			if (puertaPesada == 0) {
+				/* ----- ----- EMPUJAS LA PUERTA FUERTEMENTE ----- ----- */
+			} else if (puertaPesada == 1) {
+				/* ----- ----- CORRES HACIA ATRÁS Y SUBES AL PISO SUPERIOR ----- ----- */
+			}
+
+		}
+	}
+//	public static String pelea()
+
+}
